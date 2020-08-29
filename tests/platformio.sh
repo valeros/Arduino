@@ -65,6 +65,9 @@ function build_sketches_with_platformio()
             cat build.log
             set -e
             return $result
+        else
+            echo "Succseful build, log:"
+            cat build.log
         fi
         rm build.log
     done
