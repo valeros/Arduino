@@ -29,8 +29,11 @@ function build_sketches_with_platformio()
     local build_mod=$3
     local build_rem=$4
     local sketches=$(find $srcpath -name *.ino | sort)
+    echo "Building sketches: $sketches"
     local testcnt=0
     for sketch in $sketches; do
+        echo "2. Building sketch:" 
+        echo "$sketch" 
         testcnt=$(( ($testcnt + 1) % $build_mod ))
         if [ $testcnt -ne $build_rem ]; then
             continue  # Not ours to do
