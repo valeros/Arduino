@@ -36,6 +36,7 @@ function build_sketches_with_platformio()
         echo "$sketch" 
         testcnt=$(( ($testcnt + 1) % $build_mod ))
         if [ $testcnt -ne $build_rem ]; then
+            echo "# Not ours to do" 
             continue  # Not ours to do
         fi
         local sketchdir=$(dirname $sketch)
